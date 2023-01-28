@@ -10,6 +10,8 @@ const app = express();
 
 //ROUTES
 const UserRoute = require('./routes/user')
+const MatchRoute = require('./routes/match')
+const BetRoute = require('./routes/bet')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -35,6 +37,8 @@ connect();
 
 //ROUTING
 app.use('/user',UserRoute);
+app.use('/match',MatchRoute)
+app.use('/bet',BetRoute)
 
 const port = process.env.PORT || 8000;
 app.listen(port,()=>{
