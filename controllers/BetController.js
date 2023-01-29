@@ -27,7 +27,7 @@ const getBet = (req,res,next)=>{
 //Return all match bets
 const getMatchBets = (req,res,next)=>{
     let matchID = req.body.matchID
-    Bet.find({"matchID":matchID})
+    Bet.find({"matchID":matchID,"bs":'Open'})
     .then(response => {
         res.json({response})
     })
