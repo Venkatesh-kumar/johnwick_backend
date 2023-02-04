@@ -13,6 +13,7 @@ const UserRoute = require('./routes/user')
 const MatchRoute = require('./routes/match')
 const BetRoute = require('./routes/bet')
 const MsgRoute = require('./routes/msg');
+const WithdRoute = require('./routes/withd')
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -41,6 +42,7 @@ app.use('/user',UserRoute);
 app.use('/match',MatchRoute)
 app.use('/bet',BetRoute)
 app.use('/msg',MsgRoute)
+app.use('/withd',WithdRoute)
 
 const port = process.env.PORT || 8000;
 app.listen(port,()=>{
